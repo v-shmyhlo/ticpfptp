@@ -1,4 +1,6 @@
 import os
+import numpy as np
+import random
 import torch
 
 
@@ -27,5 +29,6 @@ def load_model(path):
     return torch.load(os.path.join(path, 'model.pt'))
 
 
-def load_weights(model, path):
-    model.load_state_dict(torch.load(os.path.join(path, 'weights.pt'), map_location='cpu'))  # TODO:
+# TODO:
+def load_weights(model, path, map_location=None):
+    model.load_state_dict(torch.load(os.path.join(path, 'weights.pt'), map_location=map_location))
